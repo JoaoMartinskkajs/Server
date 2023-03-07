@@ -65,7 +65,7 @@ io.on('connection', (socket) => {
             io.emit("Signal", {signal: signalBody, hour: getHour()});
         };
     
-        const signalStatusResult = data?.includes("GREEN") || data.includes("RED");
+        const signalStatusResult = data?.includes("GREEN") || data?.includes("RED");
         if(signalStatusResult && singalStatusCounter == 2){
             const result = handleResultSignal(data);
 
