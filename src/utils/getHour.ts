@@ -1,4 +1,4 @@
-export function getHour(){
+export function getHour(justHour?: boolean){
     const date = new Date();
     
     let hour: number | string = date.getHours();
@@ -49,6 +49,10 @@ export function getHour(){
     minutes = formatMinutes();
 
     const formatedHour = `${hour}:${minutes}`;
+
+    if(justHour){
+        return hour
+    }
 
     return formatedHour
 }

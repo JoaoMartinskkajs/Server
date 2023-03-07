@@ -5,7 +5,8 @@ const Double = new Schema({
     after: String,
     result: Object,
     hour: String,
-    date: String
+    date: String,
+    gale: String
 });
 
 export default mongoose.model("Doubles", Double)

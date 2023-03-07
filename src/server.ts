@@ -11,6 +11,7 @@ import { formatSignal } from './utils/formatSignal';
 import { handleResultSignal } from './utils/handleResultSignal';
 import { saveHistoryDouble } from './utils/saveHistoryDouble';
 import { getHour } from './utils/getHour';
+import { deleteAllDouble } from './utils/deleteAllDoubleHistory';
 
 const PORT = process.env.PORT as number | unknown;
 
@@ -34,6 +35,8 @@ io.on('connection', (socket) => {
     let signalBody: SingalBody = {};
 
     socket.on("signal", (data) => {
+        getHour() == "00" && deleteAllDouble();
+
 
         const reset = () => {
             setTimeout(() => {

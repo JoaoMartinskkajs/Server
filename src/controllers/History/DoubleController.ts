@@ -32,13 +32,33 @@ export class DoubleController{
         const formatedDate = `${day}/${month}/${year}`;
 
         try{
+            const galeFormat = () => {
+                const gale = props?.result?.sequence?.length;
+
+                if(gale == 1){
+                    return "Green"
+                }
+
+                if(gale == 2){
+                    return "Gale 2"
+                }
+
+                if(gale == 3){
+                    return "Gale 3"
+                }
+            };
+
+
             await Double.create({
                 enter: props.enter,
                 after: props.after,
                 result: props.result,
                 hour: getHour(),
-                date: formatedDate
+                date: formatedDate,
+                gale: 2
             });
+
+            
 
             return
         }
