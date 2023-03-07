@@ -55,7 +55,7 @@ export class DoubleController{
                 result: props.result,
                 hour: getHour(),
                 date: formatedDate,
-                gale: 2
+                gale: galeFormat()
             });
 
             
