@@ -35,7 +35,9 @@ io.on('connection', (socket) => {
     let signalBody: SingalBody = {};
 
     socket.on("signal", (data) => {
-        getHour() == "00" && deleteAllDouble();
+        if( getHour(true) == "00" && getHour(false, true) < 10 ){
+            deleteAllDouble();
+        };
 
 
         const reset = () => {
